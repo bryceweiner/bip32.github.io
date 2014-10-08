@@ -11,6 +11,10 @@ var LITECOIN_MAINNET_PUBLIC = 0x019da462;
 var LITECOIN_MAINNET_PRIVATE = 0x019d9cfe;
 var LITECOIN_TESTNET_PUBLIC = 0x0436f6e1;
 var LITECOIN_TESTNET_PRIVATE = 0x0436ef7d;
+var RAZOR_MAINNET_PUBLIC =     0x03f492ca;
+var RAZOR_MAINNET_PRIVATE =    0x03e15922;
+var RAZOR_TESTNET_PUBLIC =     0x039acd11;
+var RAZOR_TESTNET_PRIVATE =    0x0309204e;
 
 var BIP32 = function(bytes) {
     // decode base58
@@ -48,6 +52,8 @@ BIP32.prototype.init_from_bytes = function(bytes) {
          this.version == BITCOIN_TESTNET_PRIVATE  ||
          this.version == DOGECOIN_MAINNET_PRIVATE ||
          this.version == DOGECOIN_TESTNET_PRIVATE ||
+         this.version == RAZOR_MAINNET_PRIVATE ||
+         this.version == RAZOR_TESTNET_PRIVATE ||
          this.version == LITECOIN_MAINNET_PRIVATE ||
          this.version == LITECOIN_TESTNET_PRIVATE );
 
@@ -56,6 +62,8 @@ BIP32.prototype.init_from_bytes = function(bytes) {
          this.version == BITCOIN_TESTNET_PUBLIC  ||
          this.version == DOGECOIN_MAINNET_PUBLIC ||
          this.version == DOGECOIN_TESTNET_PUBLIC ||
+         this.version == RAZOR_MAINNET_PRIVATE ||
+         this.version == RAZOR_TESTNET_PRIVATE ||
          this.version == LITECOIN_MAINNET_PUBLIC ||
          this.version == LITECOIN_TESTNET_PUBLIC );
 
@@ -110,6 +118,14 @@ BIP32.prototype.build_extended_public_key = function() {
     case LITECOIN_TESTNET_PUBLIC:
     case LITECOIN_TESTNET_PRIVATE:
         v = LITECOIN_TESTNET_PUBLIC;
+        break;
+    case RAZOR_MAINNET_PUBLIC:
+    case RAZOR_MAINNET_PRIVATE:
+        v = RAZOR_MAINNET_PUBLIC;
+        break;
+    case RAZOR_TESTNET_PUBLIC:
+    case RAZOR_TESTNET_PRIVATE:
+        v = RAZOR_TESTNET_PUBLIC;
         break;
      default:
         throw new Error("Unknown version");

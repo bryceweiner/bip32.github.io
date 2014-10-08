@@ -60,6 +60,22 @@
             private_prefix: 0x6f+0x80,
             bip32_public: LITECOIN_TESTNET_PUBLIC,
             bip32_private: LITECOIN_TESTNET_PRIVATE
+        },
+        razor_main: {
+            name: "Razor",
+            network: "Mainnet",
+            prefix: 0x3c,
+            private_prefix: 0x3c+0x80,
+            bip32_public: RAZOR_MAINNET_PUBLIC,
+            bip32_private: RAZOR_MAINNET_PRIVATE
+        },
+        razor_test: {
+            name: "Razor",
+            network: "Testnet",
+            prefix: 0x79,
+            private_prefix: 0x79+0x80,
+            bip32_public: RAZOR_TESTNET_PUBLIC,
+            bip32_private: RAZOR_TESTNET_PRIVATE
         }
     };
 
